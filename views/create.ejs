@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+    <html lang='en'>
+    
+        <%- include('./partials/head.ejs')%>
+
+    <body>
+        
+    
+        <%- include('./partials/nav.ejs')%>
+
+        <div class="form_card">
+
+            <h2>Skapa Recension</h2>
+
+            <form id="submit_form" action="/form_action" method="POST">
+                <div class="inputBox">
+                    <input type="text" maxlength="70" spellcheck="false" id="title" name="post_title" required="required" autocomplete="off">
+                    <span>Titel</span>
+                </div>
+
+                <div class="inputBox">
+                    <textarea rows="11" maxlength="20000" spellcheck="false" id="snippet" name="snippet" required="required" autocomplete="off"></textarea>
+                    <span>Recension</span>
+                    
+
+                    <button type="submit" id="post_btn">POSTA</button>
+                </div>
+            </form>
+        </div>
+
+    </body>
+    </html>

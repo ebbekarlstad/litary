@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+    <html lang='en'>
+
+        <%- include('./partials/head.ejs')%>
+        <style> body{overflow-y: auto; padding-bottom: 270px; overflow-y: overlay;}</style>
+
+    <body>
+        <div class='desc_info'>
+            <h2>Diskussioner</h2>
+            <p>Klicka på en titel för att se recensionen!</p><br>
+        </div>
+
+        <%- include('./partials/nav.ejs')%>
+
+
+
+        <div class="posts content">
+            
+            <% if (posts.length > 0) { %>
+                <% posts.forEach(post => { %>
+
+                    <a class="single" href="/viewpost/<%= post.id %>">
+                        <h3 class="post_title"><%= post.post_title %></h3>                 
+                    </a>
+
+                <% }) %>
+            <% } else { %>
+                <h3>Kunde inte hitta några diskussioner än :(</h3>
+                <% } %>
+        </div>
+
+        <form>
+            <input type="text" spellcheck="false" autocomplete="off" id="search" name="search" placeholder="Search Posts">
+        </form>
+        
+
+        <script>
+
+            function search(query) {
+                query = query.toLowerCase();
+                var h3Elements = document.querySelectorAll('h3');
+                h3Elements.forEach(function(element) {
+                    if (element.textContent.toLowerCase().includes(query)) {
+                    element.style.display = 'block';
+                    } else {
+                    element.style.display = 'none';
+                    }
+                });
+            }
+
+            document.querySelector('#search').addEventListener('input', function() {
+                var query = this.value;
+                search(query);
+            });
+
+        </script>
+    </body>
+</html>
