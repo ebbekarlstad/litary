@@ -8,11 +8,11 @@
     "morgan": "^1.10.0"
   },
   "scripts": {
-    "start": "node server.js"
+    "start": "node app.js"
   },
   "name": "code",
   "version": "1.0.0",
-  "main": "server.js",
+  "main": "app.js",
   "author": "Ebbe Karlstad",
   "license": "ISC",
   "description": ""
