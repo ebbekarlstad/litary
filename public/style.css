@@ -261,15 +261,6 @@ p, a, li{
 .desc_info p{
     top: 25vh;
 }
-#side_panel{
-    width: 6px;
-    height: 30px;
-    background-color: #044b7f;
-    border-radius: 10%;
-    position: relative;
-    /*top: 24vh;
-    left: 10vw;*/
-}
 
 .single h3{
     cursor: pointer;
